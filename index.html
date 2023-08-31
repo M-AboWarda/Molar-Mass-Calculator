@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="style.css">
+        <meta name="author" content="Mouhammad-Abo-Warda">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Merienda+One" rel="stylesheet">
+    </head>
+    <body onkeypress="inputkeypress(event)" onkeydown="inputkeydown(event)">
+        <div class="container">
+            
+            <div id="nav">
+                <div id="hamburger-back">
+                    <div id="hamburger" onclick="hamBtn()">
+                        <div class="hamburger-bars"></div>
+                        <div class="hamburger-bars"></div>
+                        <div class="hamburger-bars"></div>
+                    </div>
+                </div>
+                <div id="tit">NA18B</div>
+                <div id="info-btn" onclick="opInfo()"><i class="far fa-question-circle"></i></div>
+            </div>
+            <div id="v-hidden-main" class="v-h-m">
+                <ul>
+                    <a href="#"><li class="main-li">Aa</li></a>
+                    <a href="#"><li class="main-li">Bb</li></a>
+                    <a href="#"><li class="main-li">Cc</li></a>
+                </ul>
+            </div>
+            <div id="info-back-box" onclick="closeInfo()">
+                <div id="info-word" class="keybordbuttons">Keybord Tips...</div>
+                <div id="info-box">
+                    <div id="info-box-head">how to use!!</div>
+                    <hr style="margin: 10px;">
+                    <div id="info">
+                        <div class="info-lines">
+                            <div class="keybordbuttons long-keybutton">Shift <i class="fas fa-long-arrow-alt-up"></i></div>
+                            <div class="keybordbuttons o-keys">+</div>
+                            <div class="keybordbuttons">C</div>
+                            <div class="keybordbuttons o-keys">=</div>
+                            <div class="keybordbuttons res">Clear all</div>
+                        </div>
+                        <div class="info-lines">
+                            <div class="keybordbuttons">C</div>
+                            <div class="keybordbuttons o-keys">or</div>
+                            <div class="keybordbuttons">&lt;</div>
+                            <div class="keybordbuttons o-keys">=</div>
+                            <div class="keybordbuttons"><i class="fas fa-backspace"></i> Backspace</div>
+                        </div>
+                        <div class="info-lines">
+                            <div class="keybordbuttons o-keys">You can write nummbers</div>
+                            <div class="keybordbuttons">0</div>
+                            <div class="keybordbuttons o-keys">to</div>
+                            <div class="keybordbuttons">9</div>
+                        </div>
+                        <div class="info-lines">
+                            <div class="keybordbuttons o-keys" style="width: 100%;">SOME Operators works as well</div>
+                            <div style="margin-left:68px;">
+                                <div class="keybordbuttons">+</div>
+                                <div class="keybordbuttons">-</div>
+                                <div class="keybordbuttons">/</div>
+                                <div class="keybordbuttons">*</div>
+                            </div>
+                        </div>
+                        <div class="info-lines">
+                            <div class="keybordbuttons o-keys">And press</div>
+                            <div class="keybordbuttons long-keybutton">Enter</div>
+                            <div class="keybordbuttons o-keys">to</div>
+                            <div class="keybordbuttons res">= Calculate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main">
+                <div class="lines">
+                    <div class="box" onclick="insert(1.008)">
+                        <div class="atom-n">H</div>
+                        <div class="atom-m">1.008</div>
+                    </div>
+                    <div id="output-box">
+                        <form name="form">
+                            <input id="output" class="output" name="output">
+                            <div id="block-out-box"></div>
+                        </form>
+                        
+                    </div>
+                    <div id="space"></div>
+                    <div class="box" onclick="insert(4.003)">
+                        <div class="atom-n">He</div>
+                        <div class="atom-m">4.003</div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="box" onclick="insert(6.941)">
+                        <div class="atom-n">Li</div>
+                        <div class="atom-m">6.941</div>
+                    </div>
+                    <div class="box" onclick="insert(9.012)">
+                        <div class="atom-n">Be</div>
+                        <div class="atom-m">9.012</div>
+                    </div>
+                    <div id="empty-box">
+                        <div id="func-container">
+                            <div id="clear" class="func" style="border-radius: 10px 0 0 10px" onclick="c()">&#40;Clear&#41;</div>
+                            <div class="func" onclick="insert('-')">-</div>
+                            <div class="func" onclick="insert('+')">+</div>
+                            <div class="func" style="border-radius: 0 10px 10px 0" onclick="equal()">=</div>
+                        </div>
+                    </div>
+                    <div class="box" onclick="insert(10.811)">
+                        <div class="atom-n">B</div>
+                        <div class="atom-m">10.811</div>
+                    </div>
+                    <div class="box" onclick="insert(12.011)">
+                        <div class="atom-n">C</div>
+                        <div class="atom-m">12.011</div>
+                    </div>
+                    <div class="box" onclick="insert(14.007)">
+                        <div class="atom-n">N</div>
+                        <div class="atom-m">14.007</div>
+                    </div>
+                    <div class="box" onclick="insert(15.999)">
+                        <div class="atom-n">O</div>
+                        <div class="atom-m">15.999</div>
+                    </div>
+                    <div class="box" onclick="insert(18.998)">
+                        <div class="atom-n">F</div>
+                        <div class="atom-m">18.998</div>
+                    </div>
+                    <div class="box" onclick="insert(20.180)">
+                        <div class="atom-n">Ne</div>
+                        <div class="atom-m">20.180</div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="box" onclick="insert(22.990)">
+                        <div class="atom-n">Na</div>
+                        <div class="atom-m">22.990</div>
+                    </div>
+                    <div class="box" onclick="insert(24.305)">
+                        <div class="atom-n">Mg</div>
+                        <div class="atom-m">24.305</div>
+                    </div>
+                    <div id="empty-box"></div>
+                    <div class="box" onclick="insert(26.982)">
+                        <div class="atom-n">Al</div>
+                        <div class="atom-m">26.982</div>
+                    </div>
+                    <div class="box" onclick="insert(28.086)">
+                        <div class="atom-n">Si</div>
+                        <div class="atom-m">28.086</div>
+                    </div>
+                    <div class="box" onclick="insert(30.974)">
+                        <div class="atom-n">P</div>
+                        <div class="atom-m">30.974</div>
+                    </div>
+                    <div class="box" onclick="insert(32.065)">
+                        <div class="atom-n">S</div>
+                        <div class="atom-m">32.065</div>
+                    </div>
+                    <div class="box" onclick="insert(35.453)">
+                        <div class="atom-n">Cl</div>
+                        <div class="atom-m">35.453</div>
+                    </div>
+                    <div class="box" onclick="insert(39.948)">
+                        <div class="atom-n">Ar</div>
+                        <div class="atom-m">39.948</div>
+                    </div>
+
+                </div>
+                <div class="lines">
+                    <div class="box" onclick="insert(39.098)">
+                        <div class="atom-n">K</div>
+                        <div class="atom-m">39.098</div>
+                    </div>
+                    <div class="box" onclick="insert(40.078)">
+                        <div class="atom-n">Ca</div>
+                        <div class="atom-m">40.078</div>
+                    </div>
+                    <div class="box" onclick="insert(44.956)">
+                        <div class="atom-n">Sc</div>
+                        <div class="atom-m">44.956</div>
+                    </div>
+                    <div class="box" onclick="insert(47.867)">
+                        <div class="atom-n">Ti</div>
+                        <div class="atom-m">47.867</div>
+                    </div>
+                    <div class="box" onclick="insert(50.942)">
+                        <div class="atom-n">V</div>
+                        <div class="atom-m">50.942</div>
+                    </div>
+                    <div class="box" onclick="insert(51.996)">
+                        <div class="atom-n">Cr</div>
+                        <div class="atom-m">51.996</div>
+                    </div>
+                    <div class="box" onclick="insert(54.938)">
+                        <div class="atom-n">Mn</div>
+                        <div class="atom-m">54.938</div>
+                    </div>
+                    <div class="box" onclick="insert(55.845)">
+                        <div class="atom-n">Fe</div>
+                        <div class="atom-m">55.845</div>
+                    </div>
+                    <div class="box" onclick="insert(58.933)">
+                        <div class="atom-n">Co</div>
+                        <div class="atom-m">58.933</div>
+                    </div>
+                    <div class="box" onclick="insert(58.693)">
+                        <div class="atom-n">Ni</div>
+                        <div class="atom-m">58.693</div>
+                    </div>
+                    <div class="box" onclick="insert(63.546)">
+                        <div class="atom-n">Cu</div>
+                        <div class="atom-m">63.546</div>
+                    </div>
+                    <div class="box" onclick="insert(65.380)">
+                        <div class="atom-n">Zn</div>
+                        <div class="atom-m">65.380</div>
+                    </div>
+                    <div class="box" onclick="insert(69.723)">
+                        <div class="atom-n">Ga</div>
+                        <div class="atom-m">69.723</div>
+                    </div>
+                    <div class="box" onclick="insert(72.640)">
+                        <div class="atom-n">Ge</div>
+                        <div class="atom-m">72.640</div>
+                    </div>
+                    <div class="box" onclick="insert(74.922)">
+                        <div class="atom-n">As</div>
+                        <div class="atom-m">74.922</div>
+                    </div>
+                    <div class="box" onclick="insert(78.960)">
+                        <div class="atom-n">Se</div>
+                        <div class="atom-m">78.960</div>
+                    </div>
+                    <div class="box" onclick="insert(79.904)">
+                        <div class="atom-n">Br</div>
+                        <div class="atom-m">79.904</div>
+                    </div>
+                    <div class="box" onclick="insert(83.798)">
+                        <div class="atom-n">Kr</div>
+                        <div class="atom-m">83.798</div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="box" onclick="insert(85.468)">
+                        <div class="atom-n">Rb</div>
+                        <div class="atom-m">85.468</div>
+                    </div>
+                    <div class="box" onclick="insert(87.620)">
+                        <div class="atom-n">Sr</div>
+                        <div class="atom-m">87.620</div>
+                    </div>
+                    <div class="box" onclick="insert(88.906)">
+                        <div class="atom-n">Y</div>
+                        <div class="atom-m">88.906</div>
+                    </div>
+                    <div class="box" onclick="insert(91.224)">
+                        <div class="atom-n">Zr</div>
+                        <div class="atom-m">91.224</div>
+                    </div>
+                    <div class="box" onclick="insert(92.906)">
+                        <div class="atom-n">Nb</div>
+                        <div class="atom-m">92.906</div>
+                    </div>
+                    <div class="box" onclick="insert(95.960)">
+                        <div class="atom-n">Mo</div>
+                        <div class="atom-m">95.960</div>
+                    </div>
+                    <div class="box" onclick="insert(98)">
+                        <div class="atom-n">Tc</div>
+                        <div class="atom-m">&#40;98&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(101.070)">
+                        <div class="atom-n">Ru</div>
+                        <div class="atom-m">101.07</div>
+                    </div>
+                    <div class="box" onclick="insert(102.910)">
+                        <div class="atom-n">Rh</div>
+                        <div class="atom-m">102.91</div>
+                    </div>
+                    <div class="box" onclick="insert(106.42)">
+                        <div class="atom-n">Pd</div>
+                        <div class="atom-m">106.42</div>
+                    </div>
+                    <div class="box" onclick="insert(107.870)">
+                        <div class="atom-n">Ag</div>
+                        <div class="atom-m">107.87</div>
+                    </div>
+                    <div class="box" onclick="insert(112.41)">
+                        <div class="atom-n">Cd</div>
+                        <div class="atom-m">112.41</div>
+                    </div>
+                    <div class="box" onclick="insert(114.82)">
+                        <div class="atom-n">In</div>
+                        <div class="atom-m">114.82</div>
+                    </div>
+                    <div class="box" onclick="insert(118.71)">
+                        <div class="atom-n">Sn</div>
+                        <div class="atom-m">118.71</div>
+                    </div>
+                    <div class="box" onclick="insert(121.76)">
+                        <div class="atom-n">Sb</div>
+                        <div class="atom-m">121.76</div>
+                    </div>
+                    <div class="box" onclick="insert(127.60)">
+                        <div class="atom-n">Te</div>
+                        <div class="atom-m">127.60</div>
+                    </div>
+                    <div class="box" onclick="insert(126.90)">
+                        <div class="atom-n">I</div>
+                        <div class="atom-m">126.90</div>
+                    </div>
+                    <div class="box" onclick="insert(131.29)">
+                        <div class="atom-n">Xe</div>
+                        <div class="atom-m">131.29</div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="box" onclick="insert(132.91)">
+                        <div class="atom-n">Cs</div>
+                        <div class="atom-m">132.91</div>
+                    </div>
+                    <div class="box" onclick="insert(137.33)">
+                        <div class="atom-n">Ba</div>
+                        <div class="atom-m">137.33</div>
+                    </div>
+                    <div id="e-box1" class="e-boxes">La-Lu</div>
+                    <div class="box right-atom" onclick="insert(178.49)">
+                        <div class="atom-n">Hf</div>
+                        <div class="atom-m">178.49</div>
+                    </div>
+                    <div class="box" onclick="insert(180.95)">
+                        <div class="atom-n">Ta</div>
+                        <div class="atom-m">180.95</div>
+                    </div>
+                    <div class="box" onclick="insert(183.84)">
+                        <div class="atom-n">W</div>
+                        <div class="atom-m">183.84</div>
+                    </div>
+                    <div class="box" onclick="insert(186.21)">
+                        <div class="atom-n">Re</div>
+                        <div class="atom-m">186.21</div>
+                    </div>
+                    <div class="box" onclick="insert(190.23)">
+                        <div class="atom-n">Os</div>
+                        <div class="atom-m">190.23</div>
+                    </div>
+                    <div class="box" onclick="insert(192.22)">
+                        <div class="atom-n">Ir</div>
+                        <div class="atom-m">192.22</div>
+                    </div>
+                    <div class="box" onclick="insert(195.08)">
+                        <div class="atom-n">Pt</div>
+                        <div class="atom-m">195.08</div>
+                    </div>
+                    <div class="box" onclick="insert(196.97)">
+                        <div class="atom-n">Au</div>
+                        <div class="atom-m">196.97</div>
+                    </div>
+                    <div class="box" onclick="insert(200.59)">
+                        <div class="atom-n">Hg</div>
+                        <div class="atom-m">200.59</div>
+                    </div>
+                    <div class="box" onclick="insert(204.38)">
+                        <div class="atom-n">Tl</div>
+                        <div class="atom-m">204.38</div>
+                    </div>
+                    <div class="box" onclick="insert(207.2)">
+                        <div class="atom-n">Pb</div>
+                        <div class="atom-m">207.2</div>
+                    </div>
+                    <div class="box" onclick="insert(208.98)">
+                        <div class="atom-n">Bi</div>
+                        <div class="atom-m">208.98</div>
+                    </div>
+                    <div class="box" onclick="insert(209)">
+                        <div class="atom-n">Po</div>
+                        <div class="atom-m">&#40;209&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(210)">
+                        <div class="atom-n">At</div>
+                        <div class="atom-m">&#40;210&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(222)">
+                        <div class="atom-n">Rn</div>
+                        <div class="atom-m">&#40;222&#41;</div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="box" onclick="insert(223)">
+                        <div class="atom-n">Fr</div>
+                        <div class="atom-m">&#40;223&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(226)">
+                        <div class="atom-n">Ra</div>
+                        <div class="atom-m">&#40;226&#41;</div>
+                    </div>
+                    <div id="e-box2" class="e-boxes">Ac-Lr</div>
+                    <div class="box right-atom" onclick="insert(267)">
+                        <div class="atom-n">Rf</div>
+                        <div class="atom-m">&#40;267&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(268)">
+                        <div class="atom-n">Db</div>
+                        <div class="atom-m">&#40;268&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(271)">
+                        <div class="atom-n">Sg</div>
+                        <div class="atom-m">&#40;271&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(272)">
+                        <div class="atom-n">Bh</div>
+                        <div class="atom-m">&#40;272&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(270)">
+                        <div class="atom-n">Hs</div>
+                        <div class="atom-m">&#40;270&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(276)">
+                        <div class="atom-n">Mt</div>
+                        <div class="atom-m">&#40;276&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(281)">
+                        <div class="atom-n">Ds</div>
+                        <div class="atom-m">&#40;281&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(280)">
+                        <div class="atom-n">Rg</div>
+                        <div class="atom-m">&#40;280&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(285)">
+                        <div class="atom-n">Cn</div>
+                        <div class="atom-m">&#40;285&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(286)">
+                        <div class="atom-n">Nh</div>
+                        <div class="atom-m">&#40;286&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(289)">
+                        <div class="atom-n">Fl</div>
+                        <div class="atom-m">&#40;289&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(290)">
+                        <div class="atom-n">Mc</div>
+                        <div class="atom-m">&#40;290&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(293)">
+                        <div class="atom-n">Lv</div>
+                        <div class="atom-m">&#40;293&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(294)">
+                        <div class="atom-n">Ts</div>
+                        <div class="atom-m">&#40;294&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(294)">
+                        <div class="atom-n">Og</div>
+                        <div class="atom-m">&#40;294&#41;</div>
+                    </div>
+                </div>
+                <div id="line6" class="lines c-6-7">
+                    <div class="box" onclick="insert(138.91)">
+                        <div class="atom-n">La</div>
+                        <div class="atom-m">138.91</div>
+                    </div>
+                    <div class="box" onclick="insert(140.12)">
+                        <div class="atom-n">Ce</div>
+                        <div class="atom-m">140.12</div>
+                    </div>
+                    <div class="box" onclick="insert(140.91)">
+                        <div class="atom-n">Pr</div>
+                        <div class="atom-m">140.91</div>
+                    </div>
+                    <div class="box" onclick="insert(144.24)">
+                        <div class="atom-n">Nd</div>
+                        <div class="atom-m">144.24</div>
+                    </div>
+                    <div class="box" onclick="insert(145)">
+                        <div class="atom-n">Pm</div>
+                        <div class="atom-m">&#40;145&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(150.36)">
+                        <div class="atom-n">Sm</div>
+                        <div class="atom-m">150.36</div>
+                    </div>
+                    <div class="box" onclick="insert(151.96)">
+                        <div class="atom-n">Eu</div>
+                        <div class="atom-m">151.96</div>
+                    </div>
+                    <div class="box" onclick="insert(157.25)">
+                        <div class="atom-n">Gd</div>
+                        <div class="atom-m">157.25</div>
+                    </div>
+                    <div class="box" onclick="insert(158.93)">
+                        <div class="atom-n">Tb</div>
+                        <div class="atom-m">158.93</div>
+                    </div>
+                    <div class="box" onclick="insert(162.50)">
+                        <div class="atom-n">Dy</div>
+                        <div class="atom-m">162.50</div>
+                    </div>
+                    <div class="box" onclick="insert(164.93)">
+                        <div class="atom-n">Ho</div>
+                        <div class="atom-m">164.93</div>
+                    </div>
+                    <div class="box" onclick="insert(167.26)">
+                        <div class="atom-n">Er</div>
+                        <div class="atom-m">167.26</div>
+                    </div>
+                    <div class="box" onclick="insert(168.93)">
+                        <div class="atom-n">Tm</div>
+                        <div class="atom-m">168.93</div>
+                    </div>
+                    <div class="box" onclick="insert(173.05)">
+                        <div class="atom-n">Yb</div>
+                        <div class="atom-m">173.05</div>
+                    </div>
+                    <div class="box" onclick="insert(174.97)">
+                        <div class="atom-n">Lu</div>
+                        <div class="atom-m">174.97</div>
+                    </div>
+                </div>
+                <div id="line7" class="lines c-6-7">
+                    <div class="box" onclick="insert(227)">
+                        <div class="atom-n">Ac</div>
+                        <div class="atom-m">&#40;227&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(232.04)">
+                        <div class="atom-n">Th</div>
+                        <div class="atom-m">232.04</div>
+                    </div>
+                    <div class="box" onclick="insert(231.04)">
+                        <div class="atom-n">Pa</div>
+                        <div class="atom-m">231.04</div>
+                    </div>
+                    <div class="box" onclick="insert(238.03)">
+                        <div class="atom-n">U</div>
+                        <div class="atom-m">238.03</div>
+                    </div>
+                    <div class="box" onclick="insert(237)">
+                        <div class="atom-n">Np</div>
+                        <div class="atom-m">&#40;237&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(244)">
+                        <div class="atom-n">Pu</div>
+                        <div class="atom-m">&#40;244&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(243)">
+                        <div class="atom-n">Am</div>
+                        <div class="atom-m">&#40;243&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(247)">
+                        <div class="atom-n">Cm</div>
+                        <div class="atom-m">&#40;247&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(247)">
+                        <div class="atom-n">Bk</div>
+                        <div class="atom-m">&#40;247&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(251)">
+                        <div class="atom-n">Cf</div>
+                        <div class="atom-m">&#40;251&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(252)">
+                        <div class="atom-n">Es</div>
+                        <div class="atom-m">&#40;252&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(257)">
+                        <div class="atom-n">Fm</div>
+                        <div class="atom-m">&#40;257&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(258)">
+                        <div class="atom-n">Md</div>
+                        <div class="atom-m">&#40;258&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(259)">
+                        <div class="atom-n">No</div>
+                        <div class="atom-m">&#40;259&#41;</div>
+                    </div>
+                    <div class="box" onclick="insert(262)">
+                        <div class="atom-n">Lr</div>
+                        <div class="atom-m">&#40;262&#41;</div>
+                    </div>
+                </div>
+            </div>
+            <div id="myfooter" class="copy">Copyright &copy; 2018 Mouhammad Abo Warda</div>
+        </div>
+        <script>
+function inputkeypress(event) {
+    var x = event.which || event.charCode;
+    var vlu = document.getElementById("output").value;
+    
+    switch (x){
+//----------------------------calculatte----------------------------
+        case 13:
+            var exp = document.getElementById("output").value;
+            if (exp){
+                document.getElementById("output").value = eval(exp);
+            }
+            
+            break;
+//------------------------------------------------------------------
+        case 40:
+            document.getElementById("output").value = vlu + '(';
+            break;
+        case 41:
+            document.getElementById("output").value = vlu + ')';
+            break;
+//----------------------------Operators----------------------------
+        case 42:
+            document.getElementById("output").value = vlu + '*';
+            break;
+        case 43:
+            document.getElementById("output").value = vlu + '+';
+            break;
+        case 45:
+            document.getElementById("output").value = vlu + '-';
+            break;
+        case 44:
+            document.getElementById("output").value = vlu + '.';
+            break;
+        case 46:
+            document.getElementById("output").value = vlu + '.';
+            break;
+        case 47:
+            document.getElementById("output").value = vlu + '/';
+            break;
+        case 60:
+//----------------------------Del-1-num(Backspace)----------------------
+            document.getElementById("output").value = vlu.substring(0,vlu.length-1);
+            break;
+        case 99:
+            document.getElementById("output").value = vlu.substring(0,vlu.length-1);
+            break;
+//----------------------------Clear----------------------------
+        case 67:
+            document.getElementById("output").value = '';
+            break;
+            
+//----------------------------Numbers----------------------------
+        case 48:
+            document.getElementById("output").value = vlu + '0';
+            break;
+        case 49:
+            document.getElementById("output").value = vlu + '1';
+            break;
+        case 50:
+            document.getElementById("output").value = vlu + '2';
+            break;
+        case 51:
+            document.getElementById("output").value = vlu + '3';
+            break;
+        case 52:
+            document.getElementById("output").value = vlu + '4';
+            break;
+        case 53:
+            document.getElementById("output").value = vlu + '5';
+            break;
+        case 54:
+            document.getElementById("output").value = vlu + '6';
+            break;
+        case 55:
+            document.getElementById("output").value = vlu + '7';
+            break;
+        case 56:
+            document.getElementById("output").value = vlu + '8';
+            break;
+        case 57:
+            document.getElementById("output").value = vlu + '9';
+            break;
+    }
+}
+//----------------------------BackspaceButton----------------------------
+function inputkeydown(event){
+    var y = event.which || event.charCode;
+    var invlu = document.getElementById("output").value;
+    switch (y){
+        case 8:
+            document.getElementById("output").value = invlu.substring(0,invlu.length-1);
+            break;
+    }
+}
+</script>
+        <script src="javascript.js"></script>
+    </body>
+</html>
+
+
+
+
+
+
+
